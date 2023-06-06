@@ -53,19 +53,19 @@ public class Main {
 				// Cargamos los datos del Objeto en el JSON
 				mapper.writeValue(file, cliente1);
 				
-				// Leemos el archivo serializado
+				// Lectura del archivo serializado
 				FileInputStream fileInputStream =new FileInputStream(myFile);
 				
 				ObjectInputStream objInputStream = new ObjectInputStream(fileInputStream);
 				
-				// se podria castear
+				// Se podria castear
 				Object aux = objInputStream.readObject();
 				
 				System.out.println("Archivo con ObjectInputStream:\n"+aux.toString()+"\n");
 				
 				objInputStream.close();
 				
-				// Lectura del JACKSON
+				// Lectura con JACKSON
 				file=new File("file\\miArchivo.json");
 				
 				Cliente cliente = mapper.readValue(file, Cliente.class);
